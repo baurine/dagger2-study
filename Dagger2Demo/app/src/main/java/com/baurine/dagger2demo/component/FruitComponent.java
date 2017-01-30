@@ -1,6 +1,6 @@
 package com.baurine.dagger2demo.component;
 
-import com.baurine.dagger2demo.container.Container;
+import com.baurine.dagger2demo.container.FruitContainer;
 import com.baurine.dagger2demo.module.FruitModule;
 
 import dagger.Component;
@@ -16,5 +16,5 @@ import dagger.Component;
 // 对应生成的类名为 DaggerXxx，此例中生成的类为 DaggerFruitComponent
 public interface FruitComponent {
     // 5. 注入方法，在 Container 中被调用
-    void inject(Container container);
+    void inject(FruitContainer fruitContainer);
 }

@@ -11,7 +11,7 @@ import javax.inject.Named;
  * Created by baurine on 1/30/17.
  */
 
-public class Container {
+public class FruitContainer {
     // 6. 用 @Inject 声明要注入的成员变量
     // @Inject
     // Fruit fruit;
