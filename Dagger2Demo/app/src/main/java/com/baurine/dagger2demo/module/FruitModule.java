@@ -1,8 +1,10 @@
 package com.baurine.dagger2demo.module;
 
 import com.baurine.dagger2demo.model.Apple;
+import com.baurine.dagger2demo.model.Banana;
 import com.baurine.dagger2demo.model.Fruit;
-import com.baurine.dagger2demo.model.FruitInfo;
+
+import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;
@@ -27,8 +29,21 @@ public class FruitModule {
     // }
 
     // 9. the FruitInfo type parameter will be provided by @Inject annotated FruitInfo constructor.
+    // @Provides
+    // public Fruit provideFruit(FruitInfo fruitInfo) {
+    //     return new Apple(fruitInfo.color, fruitInfo.size);
+    // }
+
+    // 10. use @Named annotation to differ same return type provides
+    @Named("typeA")
     @Provides
-    public Fruit provideFruit(FruitInfo fruitInfo) {
-        return new Apple(fruitInfo.color, fruitInfo.size);
+    public Fruit provideApple() {
+        return new Apple();
+    }
+
+    @Named("typeB")
+    @Provides
+    public Fruit provideBanana() {
+        return new Banana();
     }
 }

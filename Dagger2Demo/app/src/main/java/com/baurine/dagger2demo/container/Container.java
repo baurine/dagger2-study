@@ -4,6 +4,7 @@ import com.baurine.dagger2demo.component.DaggerFruitComponent;
 import com.baurine.dagger2demo.model.Fruit;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 
 /**
@@ -12,8 +13,16 @@ import javax.inject.Inject;
 
 public class Container {
     // 6. 用 @Inject 声明要注入的成员变量
+    // @Inject
+    // Fruit fruit;
+
+    @Named("typeA")
     @Inject
     Fruit fruit;
+
+    @Named("typeB")
+    @Inject
+    Fruit fruitB;
 
     public Fruit getFruit() {
         return fruit;
