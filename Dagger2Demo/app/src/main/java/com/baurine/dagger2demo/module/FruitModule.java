@@ -17,7 +17,13 @@ import dagger.Provides;
 public class FruitModule {
     // 2. @Provides 注明本方法是用来提供依赖对象的特殊方法
     @Provides
-    public Fruit provideFruit() {
-        return new Apple(Color.RED, 60);
+    public Fruit provideFruit(int color) {
+        return new Apple(color, 60);
+    }
+
+    // 8. provideColor() provides color for provideFruit() method's parameter: int color
+    @Provides
+    public int provideColor() {
+        return Color.RED;
     }
 }
